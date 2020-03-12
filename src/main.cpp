@@ -6,8 +6,6 @@
 
 #define SERIAL_BAUDRATE 115200
 
-void readRegisterEvent(char number);
-
 void setup()
 {
     Serial.begin(SERIAL_BAUDRATE);
