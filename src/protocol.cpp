@@ -112,31 +112,26 @@ void SlaveProtocol::processWireReceive(int bytesCount)
     switch (this->requestedRegister)
     {
     case I2C_REGISTER_PUMP_1_DESIRED_FLOW:
+        this->desiredFlowRateRegistry[0] = registerValue;
         break;
     case I2C_REGISTER_PUMP_2_DESIRED_FLOW:
+        this->desiredFlowRateRegistry[1] = registerValue;
         break;
     case I2C_REGISTER_PUMP_3_DESIRED_FLOW:
+        this->desiredFlowRateRegistry[2] = registerValue;
         break;
     case I2C_REGISTER_PUMP_4_DESIRED_FLOW:
+        this->desiredFlowRateRegistry[3] = registerValue;
         break;
     case I2C_REGISTER_PUMP_5_DESIRED_FLOW:
+        this->desiredFlowRateRegistry[4] = registerValue;
         break;
     case I2C_REGISTER_PUMP_6_DESIRED_FLOW:
+        this->desiredFlowRateRegistry[5] = registerValue;
         break;
     default:
         break;
     }
-}
-
-void SlaveProtocol::handleCurrentFlowRead(char pumpNumber)
-{
-}
-
-void SlaveProtocol::handleDesiredFlowRead(char pumpNumber)
-{
-}
-void SlaveProtocol::handleDesiredFlowWrite(char pumpNumber, char flowRate)
-{
 }
 
 SlaveProtocol Protocol = SlaveProtocol();
