@@ -50,28 +50,40 @@ void SlaveProtocol::processWireRequest()
         Wire.write(0xFF);
         break;
     case I2C_REGISTER_PUMP_1_DESIRED_FLOW:
+        Wire.write(this->desiredFlowRateRegistry[0]);
         break;
     case I2C_REGISTER_PUMP_2_DESIRED_FLOW:
+        Wire.write(this->desiredFlowRateRegistry[1]);
         break;
     case I2C_REGISTER_PUMP_3_DESIRED_FLOW:
+        Wire.write(this->desiredFlowRateRegistry[2]);
         break;
     case I2C_REGISTER_PUMP_4_DESIRED_FLOW:
+        Wire.write(this->desiredFlowRateRegistry[3]);
         break;
     case I2C_REGISTER_PUMP_5_DESIRED_FLOW:
+        Wire.write(this->desiredFlowRateRegistry[4]);
         break;
     case I2C_REGISTER_PUMP_6_DESIRED_FLOW:
+        Wire.write(this->desiredFlowRateRegistry[5]);
         break;
     case I2C_REGISTER_PUMP_1_CURRENT_FLOW:
+        Wire.write(this->currentFlowRateRegistry[0]);
         break;
     case I2C_REGISTER_PUMP_2_CURRENT_FLOW:
+        Wire.write(this->currentFlowRateRegistry[1]);
         break;
     case I2C_REGISTER_PUMP_3_CURRENT_FLOW:
+        Wire.write(this->currentFlowRateRegistry[2]);
         break;
     case I2C_REGISTER_PUMP_4_CURRENT_FLOW:
+        Wire.write(this->currentFlowRateRegistry[3]);
         break;
     case I2C_REGISTER_PUMP_5_CURRENT_FLOW:
+        Wire.write(this->currentFlowRateRegistry[4]);
         break;
     case I2C_REGISTER_PUMP_6_CURRENT_FLOW:
+        Wire.write(this->currentFlowRateRegistry[5]);
         break;
 
     default:
