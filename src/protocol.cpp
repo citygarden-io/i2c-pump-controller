@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include "protocol.h"
+#include "specification.h"
 
 SlaveProtocol::SlaveProtocol()
 {
@@ -35,11 +36,22 @@ void SlaveProtocol::loop()
 
 void SlaveProtocol::setCurrentFlowRate(char pumpNumber, char flowRate)
 {
+    if (pumpNumber < PUMP_OUTPUT_COUNT)
+    {
+        return;
+    }
+
+    this->currentFlowRateRegistry[pumpNumber - 1] = flowRate;
 }
 
 char SlaveProtocol::getDesiredFlowRate(char pumpNumber)
 {
-    return 0;
+    if (pumpNumber < PUMP_OUTPUT_COUNT)
+    {
+        return 0;
+    }
+
+    return this->desiredFlowRateRegistry[pumpNumber - 1];
 }
 
 void SlaveProtocol::processWireRequest()
